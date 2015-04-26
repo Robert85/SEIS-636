@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <form method="get" action="CheckOut.php">
+        <form method="get" action="checkout.php">
         <link rel="stylesheet" type="text/css" href="../style/style.css">
         <title>TODO supply a title</title>
         <meta charset="UTF-8">

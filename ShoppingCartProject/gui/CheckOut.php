@@ -1,4 +1,4 @@
-<?php include '..\controller\ShoppingCartController.php';
+<?php include '..\controller\CheckOutController.php';
         if (isset($_GET['qtty']) and isset($_GET['addtoshoppingcart']) 
               
             ) {
@@ -7,7 +7,7 @@
                
         }else {
                 $qtty = null;
-                $itemName = null;
+                $itemName = null;   
                
         }
         
@@ -26,6 +26,9 @@
     $Zip = empty($_POST['$Zip']) ? '55101' : $_POST['$Zip'];
     $Phone = empty($_POST['$Phone']) ? '6121234567' : $_POST['$Phone'];
     $email = empty($_POST['$email']) ? 'Robert.Krall@ust.com' : $_POST['$email'];
+    $CCNum = empty($_POST['$CCNum']) ? '123455667' : $_POST['$CCNum'];
+    $CSC = empty($_POST['$CSC']) ? '765' : $_POST['$CSC'];
+    $Edate = empty($_POST['$Edate']) ? '04/26/2018' : $_POST['$Edate'];
     
     
     
@@ -51,12 +54,13 @@
 
         <div id="section">
             <?php 
-                    $lookUpItem = new ShoppingCartController();
+                    $lookUpItem = new CheckOutController();
                     $lookUpItem->displayItemsFromCartHandler();
+                    
+                    
             ?>
         
-            
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+            <form method="get" action="receipt.php">
             <table>
                 <td>
                     <fieldset>
@@ -99,17 +103,17 @@
                         Zip: <input type="number" name="Zip" value="<?php echo $Zip;?>">
                         <span class="error">* <?php echo $ZipErr;?></span>
                     </fieldset>    
-                    <fieldset>
+                   <fieldset>
                         <legend>Payment Information</legend>
-                        <!--CC Number-->
+                        CC Number
                         Credit Card Number: <input type="number" name="CCNum" value="<?php echo $CCNum;?>">
                         <span class="error">* <?php echo $CCNumErr;?></span>
                         <br/>
-                        <!--CSC-->
+                        CSC
                         CSC Number: <input type="number" name="CSC" value="<?php echo $CSC;?>">
                         <span class="error">* <?php echo $CSCErr;?></span>
                         <br/>
-                        <!--Expiration Date-->
+                        Expiration Date
                         Expiration Date: <input type="date" name="Edate" value="<?php echo $Edate;?>">
                         <span class="error">* <?php echo $EdateErr;?></span>
                     </fieldset>
@@ -122,12 +126,14 @@
             </td>
             
             </table>
-            
+             <button type="submit" name="receipt">Receipt Out</button>
             
         </form>
             
         </div>
 
+            
+        
         <div id="footer">
         Copyright © 2015, Leonardo Farinha, Robert Krall
         </div>
