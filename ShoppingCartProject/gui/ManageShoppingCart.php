@@ -10,6 +10,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <form method="get" action="CheckOut.php">
         <link rel="stylesheet" type="text/css" href="../style/style.css">
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
@@ -30,6 +31,10 @@
                     $lookUpItem = new ShoppingCartController();
                     $lookUpItem->displayItemsFromCartHandler();
             ?>
+        </div>
+        
+          <div id="aside">
+            <button type="submit" name="checkout">Check Out</button>
         </div>
 
         <div id="footer">

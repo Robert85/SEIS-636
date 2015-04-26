@@ -97,4 +97,18 @@ class SqlQuery{
         $connection->mysqliConnect()->close();
     }
     
+    
+     
+    function GetTotalFromTempCart(){
+        $connection = new SqlConnection();
+        include 'PrintValues.php';
+        $printValue = new PrintValues();
+        $mysqli = $connection->mysqliConnect();
+        $sql_query = "SELECT sum(itemPrice) as totalprice FROM tempcart";
+        $result = $mysqli->query($sql_query);
+        $printValue->printAllFromCart($result);
+        $connection->mysqliConnect()->close();
+    }
+    
+    
 }

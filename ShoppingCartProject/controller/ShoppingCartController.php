@@ -24,4 +24,9 @@ class ShoppingCartController {
             $queryItem = new SqlQuery();
             $queryItem->selectAllFromTempCart();
     }
+    
+        function GetTotalFromCartHandler(){
+            $queryItem = new SqlQuery();
+            $queryItem->GetTotalFromTempCart();
+    }
 }
