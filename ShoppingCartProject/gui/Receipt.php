@@ -27,9 +27,10 @@
 
         <div id="section">
 <!--            Just outputting the receipt per order.-->
+            
             <b>Order Number</b>: <?php echo rand() ?>
             <br/>
-            Total Price:
+            Total Price: <?php echo htmlspecialchars($_GET["price"]); ?>
             <br/>
             First Name: <?php echo htmlspecialchars($_GET["fname"]); ?>
             <br/>

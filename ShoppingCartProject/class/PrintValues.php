@@ -89,4 +89,12 @@ class PrintValues {
             </table>';
         $c++;}
     }
+    
+    
+    function printTotal($totalPrice){
+        echo $totalPrice;
+    }
+    
+    
+    
 }

@@ -64,6 +64,10 @@
             <table>
                 <td>
                     <fieldset>
+                        <legend>Price </legend>
+                        <input type="text" name="price" value="<?php echo $lookUpItem->GetTotalFromCartHandler();?>" readonly="yes">       
+                    </fieldset>
+                    <fieldset>
                         <legend>Personal information:</legend>
                         <!--first name-->
                         First Name: <input type="text" name="fname" value="<?php echo $fname;?>">
@@ -109,7 +113,6 @@
                         Credit Card Number: <input type="number" name="CCNum" value="<?php echo $CCNum;?>">
                         <span class="error">* <?php echo $CCNumErr;?></span>
                         <br/>
-                        CSC
                         CSC Number: <input type="number" name="CSC" value="<?php echo $CSC;?>">
                         <span class="error">* <?php echo $CSCErr;?></span>
                         <br/>
@@ -126,7 +129,7 @@
             </td>
             
             </table>
-             <button type="submit" name="receipt">Receipt Out</button>
+             <button type="submit" name="receipt">Receipt</button>
             
         </form>
             
